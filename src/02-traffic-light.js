@@ -22,10 +22,11 @@
  * @returns {string} The driving action to take
  */
 export function getTrafficAction(color) {
-  color = color.toLowerCase()
-  if (color == "green") return "GO"
-  else if (color == "yellow") return "SLOW DOWN"
-  else if (color == "red") return "STOP"
-  else if (color == "flashing red") return "STOP AND PROCEED WITH CAUTION"
-  else return "INVALID SIGNAL"
+  switch (color.toLowerCase()){
+    case "green": return "GO";
+    case "yellow": return "SLOW DOWN";
+    case "red": return "STOP";
+    case "flashing red": return "STOP AND PROCEED WITH CAUTION";
+    default: return "INVALID SIGNAL"
+  }
 }
